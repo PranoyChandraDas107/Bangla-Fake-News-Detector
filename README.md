@@ -13,3 +13,20 @@ This project aims to detect fake news in Bangla language using state-of-the-art 
 - **Web Interface** - User-friendly Gradio web application
 
 ##  Project Structure
+
+bangla-fake-news-detector/
+│
+├── data/ # Dataset directory (ignored by git)
+├── models/ # Trained models (ignored by git)
+├── src/ # Source code
+│ ├── preprocess.py # Data preprocessing
+│ ├── train.py # Model training
+│ ├── predict.py # Prediction functions
+│ └── init.py
+├── web/ # Web application
+│ ├── app.py # Gradio web app
+│ ├── index.html # HTML template
+│ └── style.css # CSS styling
+├── requirements.txt # Python dependencies
+├── README.md # Documentation
+└── .gitignore # Git ignore file
