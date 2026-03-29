@@ -1,0 +1,105 @@
+/* Main container styling */
+.gradio-container {
+    max-width: 1200px !important;
+    margin: auto !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: transform 0.2s !important;
+}
+
+button:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Textbox styling */
+textarea {
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    font-size: 16px !important;
+    transition: border-color 0.3s !important;
+}
+
+textarea:focus {
+    border-color: #667eea !important;
+    outline: none !important;
+}
+
+/* Tab styling */
+.tab-nav {
+    background-color: #f8f9fa !important;
+    padding: 10px !important;
+}
+
+.tab-nav button {
+    background: white !important;
+    color: #333 !important;
+    margin-right: 5px !important;
+    border-radius: 5px 5px 0 0 !important;
+}
+
+.tab-nav button.selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+}
+
+/* Result box styling */
+.output-box {
+    border-radius: 10px !important;
+    padding: 15px !important;
+    background-color: #f8f9fa !important;
+    border-left: 5px solid #667eea !important;
+}
+
+/* Plot styling */
+.plot-container {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .gradio-container {
+        padding: 10px !important;
+    }
+    
+    h1 {
+        font-size: 1.8em !important;
+    }
+}
+
+/* Animation for results */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-animation {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
