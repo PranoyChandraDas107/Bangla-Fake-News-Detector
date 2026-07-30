@@ -6,9 +6,7 @@ from src.predict import BanglaFakeNewsPredictor
 import gradio as gr
 import pandas as pd
 import plotly.graph_objects as go
-from datetime import datetime
-
-# Initialize predictor
+from datetime import datetime  
 try:
     predictor = BanglaFakeNewsPredictor()
     print("Predictor loaded successfully")
@@ -16,7 +14,6 @@ except:
     predictor = None
     print("Predictor not loaded")
 
-# History storage
 history_data = []
 
 def analyze_news(text):
@@ -33,8 +30,7 @@ def analyze_news(text):
             result_text = "FAKE NEWS (Confidence: " + str(round(result['confidence']*100, 2)) + "%)"
         else:
             result_text = "REAL NEWS (Confidence: " + str(round(result['confidence']*100, 2)) + "%)"
-        
-        # Create chart
+
         fig = go.Figure(data=[go.Pie(
             labels=['Real', 'Fake'],
             values=[result['probabilities']['real'], result['probabilities']['fake']],
@@ -43,7 +39,6 @@ def analyze_news(text):
         
         fig.update_layout(title="Probability", height=400)
         
-        # Add to history
         history_data.append({
             'Time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'News': text[:30] + '...' if len(text) > 30 else text,
@@ -93,7 +88,6 @@ def clear_history():
     history_data.clear()
     return pd.DataFrame(columns=["Time", "News", "Result", "Confidence"])
 
-# Create interface
 with gr.Blocks(title="Bangla Fake News Detector") as demo:
     gr.Markdown("#  Bangla Fake News Detector")
     gr.Markdown("---")
@@ -146,4 +140,4 @@ with gr.Blocks(title="Bangla Fake News Detector") as demo:
         """)
 
 if __name__ == "__main__":
-    demo.launch(share=True, server_name="127.0.0.1", server_port=7861)
+    demo.launch(share=False, server_name="127.0.0.1", server_port=7860)
