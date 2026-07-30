@@ -1,4 +1,4 @@
-# 🇧🇩 Bangla Fake News Detector
+# Bangla Fake News Detector
 
 A Machine Learning based Bangla Fake News Detection system using BERT (Bidirectional Encoder Representations from Transformers).
 
